@@ -1,0 +1,527 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-color: hsl(0, 0%, 7%);
+    font-family: 'Sora', 'Poppins', 'Quicksand';
+    padding: 2rem 5rem 2rem 5rem;
+    color: white;
+}
+
+
+
+/* Navigation top-most bar */
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+   
+    padding-bottom: 1rem;
+}
+
+.bestWPM-con{
+    display: flex;
+    align-items: center;
+}
+
+#champion{
+    height: 1.2rem;
+    margin: 0.3rem;
+}
+
+#personal-best-text{
+    margin: 0.3rem;
+    font-size: 0.95rem;
+    color: hsl(240, 1%, 59%);
+}
+
+#personal-best-no{
+    margin: 0.3rem;
+    font-size: 1rem;
+    color: white;
+}
+
+#personal-best-wpm{
+    margin-right: 0.3rem;
+    font-size: 1rem;
+    color: white;
+}
+
+
+
+/* Navigation second bar - Details and Controls bar */
+
+
+.navbar-controls{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 0.2px solid hsl(0, 0%, 22%);
+    margin-bottom: 1.5rem;
+    align-items: center;
+   
+}
+
+
+
+    /*Details part*/
+.show-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details{
+    display: flex;
+    margin-left: 1rem;
+    padding-right: 1rem;
+}
+
+.wpm, .accuracy{
+    border-right: 0.2px solid hsl(0, 0%, 22%);
+}
+
+.details-text{
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    color: hsl(240, 1%, 59%);
+}
+
+#current-wpm{
+    font-size: 1.3rem;
+    color: white;
+}
+
+#current-accuracy, #current-accuracy-percent{  
+    font-size: 1.3rem;
+    color: hsl(354, 63%, 57%);
+}
+
+#current-timer{
+    font-size: 1.3rem;
+    color: hsl(49, 85%, 70%);
+    font-weight: 600;
+}
+
+
+    /*Controls part*/
+.show-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.difficulty input[type="radio"], .mode input[type="radio"]{
+    display: none;
+}
+
+.difficulty label, .mode label{
+    font-family: 'Sora','Poppins','Quicksand';
+    font-size: 0.85rem;
+    color: white;
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    margin-left: 0.3rem;
+    border: 1.5px solid hsl(240, 1%, 59%);
+    cursor: pointer;
+}
+.difficulty label:focus, .mode label:focus{
+    outline: 0.1rem solid hsl(210, 100%, 65%);
+    outline-offset: 0.15rem;
+}
+.difficulty label:hover, .mode label:hover{
+    border: 1.5px solid hsl(210, 100%, 65%);
+    color: hsl(210, 100%, 65%);
+}
+
+.difficulty input[type="radio"]:checked+label, .mode input[type="radio"]:checked+label{
+    border: 1.5px solid hsl(210, 100%, 65%);
+    color: hsl(210, 100%, 65%);
+}
+
+.control{
+    display: flex;
+    margin-left: 1rem;
+    padding-right: 1rem;
+}
+
+.difficulty, .mode, .timed{
+    border-right: 0.2px solid hsl(0, 0%, 22%);
+}
+
+.difficulty p, .mode p{
+    font-size: 0.8rem;
+    color: hsl(240, 1%, 59%);
+    margin: 0.3rem;
+}
+
+.timed label, .type label{
+    font-size: 0.8rem;
+    color: hsl(240, 1%, 59%);
+    margin: 0.3rem;
+}
+
+.timed select, .type select{
+    font-family: 'Sora','Poppins','Quicksand';
+    font-size: 0.85rem;
+    background: none;
+    color: hsl(210, 100%, 65%);
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    margin-left: 0.3rem;
+    border: 1.5px solid hsl(210, 100%, 65%);
+    cursor: pointer;
+}
+.timed select:focus, .type select:focus{
+    outline: 0.1rem solid hsl(210, 100%, 65%);
+    outline-offset: 0.15rem;
+}
+
+
+
+/*Main typing container*/
+
+.typing-starter-container{
+    position: relative;
+}
+    /*Typing box area*/
+
+.correct{
+    color: hsl(140, 63%, 57%);
+}
+.incorrect{
+    color: hsl(354, 63%, 57%);
+    text-decoration: underline 0.1rem;
+    text-underline-offset: 0.4rem;
+}
+.current{
+    background-color: hsl(240, 1%, 32%);
+}
+
+
+.main-typing-box{
+position: relative;
+border-bottom: 0.2px solid hsl(0, 0%, 22%);;
+min-height: 23rem;
+}
+
+.textDisplay{
+    font-size: 2em;
+    color: hsl(240, 1%, 59%);
+}
+
+.textDisplay span{
+border-radius: 0.2rem;
+}
+
+#typingInput{
+position: absolute;
+top: 0;
+min-height: 100%;
+width: 100%;
+opacity: 0;
+font-size: 2rem;
+font-family: 'Sora','Poppins','Quicksand';
+}
+
+
+    /*Reset button*/
+
+.reset-btn-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.3rem;
+}
+
+.resetButton{
+    height: 2.5rem;
+    width: 8.7rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Sora', 'Poppins','Quicksand';
+    color: white;
+    background-color: hsl(0, 0%, 17%);
+    border-radius: 0.4rem;
+    border: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+
+
+/* Start page */
+
+.disappearance{
+    display: none !important; 
+}
+
+.start-main-cont{
+    position: absolute;
+    background-color: hsl(0, 0%, 7%,0.60);
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.starter-page-cont{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    opacity: 30;
+}
+
+.start-page{
+    text-align: center;
+}
+
+    /*Starter button */
+#start-typing-test{
+    margin: 1rem;
+    color: white;
+    background-color: hsl(214, 100%, 55%);
+    border: none;
+    border-radius: 0.6rem;
+    min-height: 2.7rem;
+    min-width: 9.3rem;
+    font-family: 'Sora','Poppins','Quicksand';
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#start-typing-test:hover{
+    background-color: hsl(210, 100%, 65%);
+    cursor: pointer;
+}
+
+#start-typing-test:focus{
+    outline: 0.1rem solid hsl(210, 100%, 65%);
+    outline-offset: 0.15rem;
+}
+
+
+/* MAIN AREA CONTAINER TO HIDE OR SHOW FOR SUCCESS PAGE*/
+
+
+
+
+
+
+/* Successful page */
+
+    /*Logo in it*/
+
+.logo-cont-holder{
+    
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#maingreen-logo-cont{
+    background-color: hsl(140, 63%, 57%, 20%);
+    width:6rem;
+    height: 6rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-cont{
+    background-color: hsl(140, 63%, 57%, 40%);
+    width:4.5rem;
+    height: 4.5rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#success-logo{
+    height: 3rem;
+}
+
+
+    /*Header text in it*/
+
+.main-text-holder{
+    
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main-header{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#belowtext{
+    font-size: 0.85rem;
+    margin: 0.2rem;
+    color: hsl(240, 1%, 59%);
+    margin-bottom: 2rem;
+}
+
+
+    /*Success page detail show */
+
+.detail-show-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.detail-show-cont{
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.show{
+    margin: 0.4rem;
+    border: 1px solid hsl(0, 0%, 22%);
+    width: 7.5rem;
+    height: 4.2rem;
+    border-radius: 0.35rem;
+    
+}
+
+.detail-show-text{
+    margin: 0.7rem 0.3rem 0.1rem 1rem;
+    font-size: 0.95rem;
+    color: hsl(240, 1%, 59%);
+}
+
+#detail-show-wpm{
+    margin: 0.2rem 0.3rem 0.1rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+
+.detail-show-accuracy-cont{
+    display: flex;
+}
+
+#detail-show-accuracy{
+    margin: 0.2rem 0.1rem 0.1rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: hsl(354, 63%, 57%);
+}
+#detail-show-accuracy-percent{
+    margin: 0.2rem 0.3rem 0.1rem 0rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: hsl(354, 63%, 57%);
+}
+
+
+
+.detail-show-char-cont{
+    display: flex;
+}
+.detail-show-char{
+    margin: 0.1rem 0.1rem 0.1rem 0rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#detail-show-char-total{
+    margin-left: 1rem;
+    color: hsl(140, 63%, 57%);
+}
+#detail-show-char-percent{
+    color: hsl(240, 1%, 32%);    
+}
+#detail-show-char-wrong{
+    color: hsl(354, 63%, 57%);
+}
+
+
+
+    /* Success page restart button area */
+
+.final-btn-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem;
+}
+
+#final-btn{
+    height: 2.5rem;
+    width: 9.7rem;
+    border-radius: 0.6rem;
+    font-size: 0.9rem;
+    font-family: 'Sora', 'Poppins', 'Quicksand';
+    font-weight: 600;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#final-btn i{
+    margin-left: 0.25rem;
+}
+
+
+#confetti{
+    width: 100%;
+    height: 10rem;
+    overflow: hidden;
+    background-image: url('images/pattern-confetti.svg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 50rem;
+}
+
+
+#star1{
+    height: 3rem;
+    width: 3rem;
+    background-image: url("images/pattern-star-1.svg");
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 56%;
+    left: 85%;
+    background-size: contain;
+}
+
+#star2{
+    height: 2rem;
+    width: 2rem;
+    background-image: url("images/pattern-star-2.svg");
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 25%;
+    left: 10%;
+    background-size: contain;
+}
