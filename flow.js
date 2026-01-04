@@ -581,6 +581,7 @@ function updatePersonalBest(){
         FinalButtonText.innerText = "Go Again ";
 
     }else if(currentWPM > savedBest){
+        localStorage.setItem("personal_best_WPM", currentWPM);
         savedBest = currentWPM;
         personal_best_number = currentWPM;
         personalBestShow.innerText = savedBest;
