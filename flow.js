@@ -1,5 +1,6 @@
 
 let textDisplay = document.querySelector(".textDisplay");
+let PersonalBestText = document.querySelector("#personal-best-text");
 let personalBestShow = document.querySelector("#personal-best-no");
 let timeDisplayer = document.querySelector("#current-timer");
 let timeSelectOptions = document.querySelector("#time-options");
@@ -27,6 +28,8 @@ let Confetti = document.querySelector("#confetti");
 let Stars = document.querySelector(".star");
 
 
+
+personalBestResponsive();
 
 
 
@@ -598,4 +601,23 @@ function updatePersonalBest(){
     }
 }
 
+
+
+
+
+
+
+// CODE TO MAKE SITE RESPONSIVE...
+
+
+    //for topmost navbar
+
+function personalBestResponsive(){
+    if(window.matchMedia("(max-width: 600px)").matches){
+        PersonalBestText.innerText = "Best: ";
+    }else{
+        PersonalBestText.innerText = "Personal Best:";
+    }
+}
+window.addEventListener("resize", personalBestResponsive);
 

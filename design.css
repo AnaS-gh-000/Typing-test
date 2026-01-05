@@ -21,6 +21,15 @@ body{
     padding-bottom: 1rem;
 }
 
+#typing_logo{
+    background-image: url("images/logo-large.svg");
+    width: 28rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+}
+
 .bestWPM-con{
     display: flex;
     align-items: center;
@@ -524,4 +533,48 @@ font-family: 'Sora','Poppins','Quicksand';
     top: 25%;
     left: 10%;
     background-size: contain;
+}
+
+
+
+@media(max-width: 600px){
+
+    /* REDUCE BODY PADDING */
+    body{
+        padding: 1rem;
+    }
+
+    /*TOP NAVBAR STACKS*/
+    .navbar-container{
+        padding-bottom: 0.6rem;
+    }
+
+   
+    #typing_logo{
+        background-image: url("images/logo-small.svg");
+        width: 4rem;
+        height: 32px;
+        
+    }
+
+    #champion{
+        height: 1rem;
+        margin: 0.2rem;
+    }
+
+    #personal-best-text{
+        margin: 0.2rem;
+        font-size: 0.80rem;
+    }
+
+    #personal-best-no{
+        margin: 0.2rem;
+        font-size: 0.9rem;
+    }
+
+    #personal-best-wpm{
+        margin-right: 0.2rem;
+        font-size: 0.9rem;
+    }
+
 }
