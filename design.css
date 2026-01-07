@@ -548,7 +548,7 @@ font-family: 'Sora','Poppins','Quicksand';
 
 
 
-@media(max-width: 600px){
+@media(max-width: 750px){
 
     /* REDUCE BODY PADDING */
     body{
@@ -619,18 +619,11 @@ font-family: 'Sora','Poppins','Quicksand';
 
     /*Controls part*/
 .show-controls{
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 0.9rem;
 }
 
-
-/* .difficulty input[type="radio"], .mode input[type="radio"]{
-    display: none;
-} */
 
 .difficulty label, .mode label{
     font-size: 0.80rem;
@@ -639,14 +632,7 @@ font-family: 'Sora','Poppins','Quicksand';
     margin-left: 0.2rem;
     
 }
-/* .difficulty label:focus, .mode label:focus{
-    outline: 0.1rem solid hsl(210, 100%, 65%);
-    outline-offset: 0.15rem;
-} */
-/* .difficulty label:hover, .mode label:hover{
-    border: 1.5px solid hsl(210, 100%, 65%);
-    color: hsl(210, 100%, 65%);
-} */
+
 
 .difficulty input[type="radio"]:checked+label, .mode input[type="radio"]:checked+label{
     display: inline-block;
@@ -676,9 +662,9 @@ font-family: 'Sora','Poppins','Quicksand';
 }
 
 .difficulty, .mode{
-    position: relative;
+    
     width: 50%;
-}/*?*/
+}
 .difficulty label, .mode label{
     width: 100%;
     text-align: center;
@@ -708,10 +694,22 @@ font-family: 'Sora','Poppins','Quicksand';
     text-align: center;
 }
 
-/* .timed select:focus, .type select:focus{
-    outline: 0.1rem solid hsl(210, 100%, 65%);
-    outline-offset: 0.15rem;
-} */
+
+    /*Main typing container*/
+        
+    
+    /*Typing box area*/
+
+    .main-typing-box{
+    display: flex;
+    flex-basis: 100%;
+    min-height: 23rem;
+    max-height:24rem ;
+    overflow-y: scroll;
+    }
+
+
+    
 
 
 
