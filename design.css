@@ -623,6 +623,7 @@ font-family: 'Sora','Poppins','Quicksand';
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 0.9rem;
+    width: 100%;
 }
 
 
@@ -643,12 +644,12 @@ font-family: 'Sora','Poppins','Quicksand';
 .radio-controls{
     display: flex;
     flex-basis: 100%;
-    justify-content: space-around;  
+    justify-content: space-between;  
 }
 .select-controls{
     display: flex;
     flex-basis: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 
@@ -660,7 +661,7 @@ font-family: 'Sora','Poppins','Quicksand';
 
 .difficulty, .mode{
     
-    width: 50%;
+    width: 45%;
 }
 .difficulty label, .mode label{
     width: 100%;
@@ -676,7 +677,7 @@ font-family: 'Sora','Poppins','Quicksand';
 
 
 .timed, .type{
-    width: 40%;
+    width: 45%;
 }
 
 .timed label, .type label{
