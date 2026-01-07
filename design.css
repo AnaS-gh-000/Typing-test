@@ -563,29 +563,29 @@ font-family: 'Sora','Poppins','Quicksand';
    
     #typing_logo{
         background-image: url("images/logo-small.svg");
-        width: 4rem;
-        height: 32px;
+        width: 4.2rem;
+        height: 2.1rem;
         
     }
 
     #champion{
-        height: 1rem;
+        height: 1.05rem;
         margin: 0.2rem;
     }
 
     #personal-best-text{
         margin: 0.2rem;
-        font-size: 0.80rem;
+        font-size: 0.9rem;
     }
 
     #personal-best-no{
         margin: 0.2rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     #personal-best-wpm{
         margin-right: 0.2rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
 
@@ -604,8 +604,9 @@ font-family: 'Sora','Poppins','Quicksand';
     /*Details part*/
     .show-details{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
+        flex-basis: 100%;
     }
 
     .details{
@@ -633,10 +634,6 @@ font-family: 'Sora','Poppins','Quicksand';
     
 }
 
-
-.difficulty input[type="radio"]:checked+label, .mode input[type="radio"]:checked+label{
-    display: inline-block;
-}
 
 .control{
     margin-left: 0.6rem;
@@ -706,9 +703,14 @@ font-family: 'Sora','Poppins','Quicksand';
     min-height: 23rem;
     max-height:24rem ;
     overflow-y: scroll;
+    margin-bottom: 1rem;
     }
 
-
+    .resetButton{
+    height: 3rem;
+    width: 10rem;
+    border-radius: 0.45rem;
+}
     
     /* Successful page */
     .logo-cont-holder{
