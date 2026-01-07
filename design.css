@@ -72,6 +72,7 @@ body{
     border-bottom: 0.2px solid hsl(0, 0%, 22%);
     margin-bottom: 1.5rem;
     align-items: center;
+    gap: 0.5rem;
    
 }
 
@@ -597,6 +598,7 @@ font-family: 'Sora','Poppins','Quicksand';
         padding-top: 1.5rem;
         padding-bottom: 0.6rem;
         margin-bottom: 1.4rem;
+        gap: 0rem;
     }
 
 
