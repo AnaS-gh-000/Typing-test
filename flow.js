@@ -464,7 +464,7 @@ function wpmCalculator (){
         if (inputLength < 5){
             return;
         }
-        let WPM = (inputLength / 5) / ((Seconds-StoreSec) / 60); 
+        let WPM = ((inputLength-wrongInput) / 5) / ((Seconds-StoreSec) / 60); 
         wpmShowBox.innerText = Math.round(WPM);
         FinalWPMshow.innerText = Math.round(WPM);
 
