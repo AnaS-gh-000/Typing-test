@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here]()
-- Live Site URL: [Add live site URL here](https://anas-gh-000.github.io/Typing-speed-test/)
+- Live Site URL: [Add live site URL here](https://anas-gh-000.github.io/Typing-test/)
 
 ## My process
 
@@ -103,7 +103,7 @@ The areas I plan to focus on next are DOM manipulation and writing logical state
 
 ## Author
 
-- Website - [Ana](https://anas-gh-000.github.io/Typing-speed-test/)
+- Website - [Ana](https://anas-gh-000.github.io/Typing-test/)
 - Frontend Mentor - [Ana](https://www.frontendmentor.io/profile/AnaS-gh-000)
 
 
