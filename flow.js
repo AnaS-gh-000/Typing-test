@@ -614,6 +614,8 @@ function updatePersonalBest(){
         FinalMainText.innerText = "High Score Smashed!";
         FinalSubText.innerText = "You're getting faster. That was incredible typing.";
         FinalButtonText.innerText = "Beat this score ";
+
+        
     }
 }
 

@@ -13,10 +13,12 @@ This is a solution to the [Typing Speed Test challenge on Frontend Mentor](https
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+
 
 
 ## Overview
+
+This is challenge from Frontend Mentor to create a typing test where you can check your WPM and Accuracy along with other factors to push your limits. Have a great time going through!
 
 ### The challenge
 
@@ -24,11 +26,12 @@ Users should be able to:
 
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
+- Interactively be able to get their WPM and accuracy in different state factors
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://ananya-gh-143.github.io/Typing-speed-test/)
+- Live Site URL: [Add live site URL here](https://anas-gh-000.github.io/Typing-speed-test/)
 
 ## My process
 
@@ -39,56 +42,71 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-
+- Vanilla JavaScript
+- Json files
 
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Learning new HTML properties, such as the options in the select tag, was new to me. While the concept was simple, it took me some time to fully grasp. Another major thing I learned was using Media Queries in CSS to make a site responsive. Trying to make this site responsive was my first attempt in this area. Although it was confusing at first, once I started working with it, it became comparatively easier to understand.
 
-To see how you can add code snippets, see below:
+In the JavaScript part, there was a lot to learn. One of the major concepts was using localStorage and dividing a string’s characters to compare them with the user’s input. These concepts were initially unfamiliar and challenging to grasp. Since localStorage interacts more deeply with the DOM, and character division requires visually understanding the desired outcome, it took some effort. In this project, the goal was to compare user input to a given text and highlight each character as correct or incorrect.
+
+The functions I wrote for WPM and accuracy calculations also required careful planning. I first had to create a logical flow of what I wanted to happen, then implement it in JavaScript, which was time-consuming. After writing the functions, debugging them and testing the start and disable functionality individually was also necessary.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<select name="type-options" id="type-options">
+  <option value="normal" selected>Normal</option>
+  <option value="code">Coding</option>
+</select>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+@media(max-width: 750px){}
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+localStorage.setItem("personal_best_WPM", currentWPM);
+
+function loadText(level){
+    if (!typingData[level]){console.log(`Typing data not loaded yet; error.`); return;}     
+    accuracyReset();
+    wpmShowBox.innerText = 0;
+
+    const passages = typingData[level];
+    const randomIndx = Math.floor(Math.random()* passages.length);  
+    const selectedPassage = passages[randomIndx];   
+    let currentText = selectedPassage.text;   
+
+    textDisplay.innerText = "";  
+   
+    currentText.split("").forEach(char =>{
+        const span = document.createElement("span");
+        span.innerText= char;
+        textDisplay.appendChild(span);
+    });
+
+   
+    typingInput.disabled = false;
+    typingInput.value = "";
+    typingInput.focus();
+    
 }
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+The areas I plan to focus on next are DOM manipulation and writing logical statements to create fully functional JavaScript functions. I also want to improve my use of semantic HTML, as well as continue refining site responsiveness using both CSS and JavaScript.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [W3 schools](https://www.w3schools.com/) - This website is essentially amazing for understanding JS details. Like how the localStorage works, and the Math() functions.
+- [MDN documentation](https://developer.mozilla.org/en-US/) - I'd recommend this more for someone whose trying to dive deeper into CSS and semantic HTML. This really helped me in finding exact tags that would work for images and which values can help me modify it in CSS. Even the concept of flex display.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Ana](https://anas-gh-000.github.io/Typing-speed-test/)
+- Frontend Mentor - [Ana](https://www.frontendmentor.io/profile/AnaS-gh-000)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
-## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+
