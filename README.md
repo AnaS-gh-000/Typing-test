@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://anas-gh-000.github.io/Typing-speed-test/)
 - Live Site URL: [Add live site URL here](https://anas-gh-000.github.io/Typing-speed-test/)
 
 ## My process
