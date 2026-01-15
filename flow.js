@@ -293,9 +293,25 @@ typingInput.addEventListener("click", () => {
 typingInput && typingInput.focus();
 
 
+function autoScroll (){
+    if(window.matchMedia("(max-width: 700px)").matches){
+        const currentChar = document.querySelector(".textDisplay .current");
+        if(currentChar){
+            currentChar.scrollIntoView({
+                behavior: "smooth",
+                block: "center", 
+            });
+        }
+    }
+}
+
+
 //add a eventlistener that whenever any charcter is written or deleted- gets triggered.
 //whatever is typed in input, split it into characters and add it into input variable.
 typingInput.addEventListener("input",()=>{
+
+    autoScroll();
+    
     TimerType(); //turn on the timer just as user enters a single character in the input box
     
     const input= typingInput.value.split("");   
@@ -613,7 +629,7 @@ function updatePersonalBest(){
     //for topmost navbar
 
 function personalBestResponsive(){
-    if(window.matchMedia("(max-width: 600px)").matches){
+    if(window.matchMedia("(max-width: 700px)").matches){
         PersonalBestText.innerText = "Best: ";
     }else{
         PersonalBestText.innerText = "Personal Best:";

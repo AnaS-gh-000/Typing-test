@@ -701,20 +701,29 @@ font-family: 'Sora','Poppins','Quicksand';
     /*Typing box area*/
 
     .main-typing-box{
-    display: flex;
-    flex-basis: 100%;
-    min-height: 23rem;
-    max-height:24rem ;
-    overflow-y: scroll;
-    overflow-x: auto;
-    margin-bottom: 1rem;
+        display: flex;
+        flex-basis: 100%;
+        min-height: 23rem;
+        max-height:24rem ;
+        overflow-y: auto;
+        overflow-x: visible;
+        margin-bottom: 1rem;
+        white-space: pre-wrap;        
+        word-wrap: break-word;
+    }
+
+    .textDisplay{
+        white-space: pre-wrap;        
+        word-wrap: break-word;     
+        word-break: break-word;       
+        flex-wrap: wrap; 
     }
 
     .resetButton{
-    height: 3rem;
-    width: 10rem;
-    border-radius: 0.45rem;
-}
+        height: 3rem;
+        width: 10rem;
+        border-radius: 0.45rem;
+    }
     
     /* Successful page */
     .logo-cont-holder{
